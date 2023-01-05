@@ -1,7 +1,16 @@
-import random
+import PySimpleGUI as sg
 
-lower = int(input('Enter a lower bound: '))
-upper = int(input('Enter an upper bound: '))
+label_1 = sg.Text('Enter feet:')
+textbox_1 = sg.InputText()
 
-rand_num = random.randint(lower, upper)
-print(rand_num)
+label_2 = sg.Text('Enter inches:')
+textbox_2 = sg.Input()
+
+button = sg.Button('Convert')
+
+window = sg.Window('Convertor', layout=[[label_1, textbox_1],
+                                        [label_2, textbox_2],
+                                        [button]])
+
+window.read()
+window.close()
